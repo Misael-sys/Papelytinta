@@ -1,0 +1,72 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-icon" data-background-color="green">
+                        <i class="material-icons">perm_identity</i>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title"> Editar Cliente 
+                           
+                        </h4>
+                        <form #f2="ngForm" (ngSubmit)="onSubmit()">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group label-on-left">
+                                        <label class="control-label">Nombre</label>
+                                        <input type="text" class="form-control" name="nombre" required [(ngModel)]="cliente.nombre">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group label-on-right">
+                                        <label class="control-label">Apellido</label>
+                                        <input type="text" class="form-control" name="apellido" required
+                                            [(ngModel)]="cliente.apellido" placeholder="{{cliente.apellido}}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group label-on-left">
+                                        <label class="control-label">Telefono</label>
+                                        <input type="text" class="form-control" name="telefono" required [(ngModel)]="cliente.telefono">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group label-on-right">
+                                        <label class="control-label">Direccion</label>
+                                        <input type="text" class="form-control" name="direccion" required
+                                            [(ngModel)]="cliente.direccion" placeholder="{{cliente.direccion}}">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div div class="row">
+                                <div class="col-md-12">
+            
+                                  <div class="form-group">
+                                    <label class="control-label" for="">Email:
+                                      <span class="star">*</span>
+                                    </label>
+                                    <input type="email" class="form-control" name="email" [(ngModel)]="cliente.correo" required
+                                      #email="ngModel" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$">
+                                    <small [hidden]="email.valid || (email.pristine && !f2.submitted)" class="text-danger">
+                                      Email es requerido en un formato como este: <i>john@doe.com</i>.
+                                    </small>
+                                  </div>
+                                </div>
+                              </div>
+
+                            <button type="submit" [disabled]="!f2.valid" class="btn btn-success pull-right">Actualizar
+                                Perfil</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
