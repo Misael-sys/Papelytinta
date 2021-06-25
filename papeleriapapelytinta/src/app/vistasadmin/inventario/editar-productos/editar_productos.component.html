@@ -1,0 +1,166 @@
+<div class="main-content">
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h3 class="title text-center">Productos</h3>
+        <br />
+
+      </div>
+
+
+      <div class="tab-content">
+        <!--
+               Agregar   -->
+        <div class="tab-pane active" id="description-1">
+
+          <div class="col-md-12 ">
+            <div class="card">
+              <form #f2="ngForm" class="form-horizontal" novalidate (ngSubmit)="save(f2.value, f2.valid)">
+
+                <div class="card-header text-center " data-background-color="rose">
+                  <h4 class="card-title">Editar producto</h4>
+                </div>
+
+                <div class="card-content">
+
+                  <h4 class="card-title"> <i class="material-icons">create</i> Informacion basica</h4>
+
+
+                  <div class="row">
+                    <div class="col-sm-6 ">
+                      <div class="form-group label-floating">
+                        <label class="control-label"></label>
+                        <input class="form-control" type="text" name="nombre" [(ngModel)]="producto.nombre" required
+                          #text="ngModel" placeholder="Nombre">
+                      </div>
+                    </div>
+                    <div class="col-sm-6 ">
+                      <div class="form-group label-floating">
+                        <label class="control-label"></label>
+                        <input class="form-control" type="text" name="codigo" number="true"
+                          [(ngModel)]="producto.codigo" required #number="ngModel" placeholder="Codigo">
+                      </div>
+                    </div>
+
+
+
+                    <div class="col-sm-6">
+                      <div class="form-group label-floating">
+                        <label class="control-label"></label>
+                        <input class="form-control" type="number" name="unidades" number="true"
+                          [(ngModel)]="producto.unidades" required #number="ngModel" placeholder="Unidades" />
+                      </div>
+                    </div>
+
+
+                    <div class="col-sm-6 ">
+                      <div class="form-group label-floating">
+                        <label class="control-label"></label>
+                        <input class="form-control" type="number" name="number" number="true"
+                          [(ngModel)]="producto.precio" required #number="ngModel" placeholder="Precio">
+                      </div>
+                    </div>
+
+                  </div>
+
+
+                  <div class="row">
+                    <h4 class="card-title "> <i class="material-icons">create</i> Categoria </h4>
+                    <div class="col-sm-6">
+
+
+                      <label class="control-label">Seleccionar categoria</label>
+                      <select name="categoria" class="form-control" [(ngModel)]="producto.categoria" required>
+                        <option disabled="" selected=""></option>
+                        <option *ngFor="let categ of categorias"> {{categ.nombre}} </option>
+                      </select>
+
+
+                    </div>
+
+                  </div>
+
+
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <h4 class="card-title"> <i class="material-icons">create</i>
+                        Proveedor </h4>
+
+                      <label class="control-label">Seleccionar proveedor</label>
+                      <select name="proveedor" class="form-control" [(ngModel)]="producto.proveedor" required>
+                        <option disabled="" selected=""></option>
+                        <option *ngFor="let proveedor of proveedores"> {{proveedor.nombre}} </option>
+                      </select>
+                    </div>
+
+                    <div class="col-sm-6 ">
+                      <div class="form-group label-on-left">
+                        <label class="control-label"></label>
+                        <input class="form-control" type="text" name="text" [(ngModel)]="producto.marca" required
+                          #text="ngModel" placeholder="Marca">
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                  <div class="row">
+                    <h4 class="card-title"> <i class="material-icons">create</i>
+                      Informacion Adiccional </h4>
+
+
+                    <div class="col-sm-5">
+                      <label class="control-label">Seleccionar estado</label>
+                      <select name="estado" class="form-control" [(ngModel)]="producto.estado" required>
+                        <option disabled="" selected=""></option>
+                        <option value="Disponible"> Disponible </option>
+                        <option value="No_disponible"> No disponible </option>
+                      </select>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label class="label-control">Fecha de registro</label>
+                        <input type="date" class="form-control " value="14/02/2021" [(ngModel)]="producto.fecha"
+                          name="fecha" required />
+                      </div>
+                    </div>
+
+                  </div>
+
+
+
+
+                </div>
+
+                <div class="card-footer text-center">
+                  <button type="button" class="btn btn-default btn-fill" [disabled]="!f2.valid" (click)="editarProducto()"
+                   >Editar</button>
+                </div>
+                <div class="card-footer text-center">
+                  <button type="button" class="btn btn-danger btn-fill" (click)="cancel()"
+                   >Cancelar</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+        <!--
+                     termina agregar   -->
+
+
+
+        <!--
+                     Lista   -->
+
+
+
+        <!--
+                                      Termina lista   -->
+
+      </div>
+
+    </div>
+  </div>

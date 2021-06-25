@@ -1,0 +1,45 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-icon" data-background-color="blue">
+                        <i class="material-icons">perm_identity</i>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title"> Editar Categoria
+
+                        </h4>
+                        <form #f2="ngForm" (ngSubmit)="onSubmit()">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Nombre</label>
+                                        <input type="text" class="form-control" name="nombre" required
+                                            [(ngModel)]="categ.nombre">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Apellido</label>
+                                        <input type="text" class="form-control" name="descripcion" required
+                                            [(ngModel)]="categ.descripcion" placeholder="{{categ.descripcion}}">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card-footer text-center">
+                                <button type="submit" [disabled]="!f2.valid" class="btn btn-info ">Actualizar
+                                Perfil</button>
+                                <button  class="btn btn-danger pull-right"
+                                    (click)="cancel()">Cancelar</button>
+                            </div>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
